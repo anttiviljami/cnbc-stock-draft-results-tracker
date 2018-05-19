@@ -34,7 +34,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom --silent",
     "eject": "react-scripts eject",
-    "lint": "eslint **/*.{js,jsx}"
+    "lint": "eslint src/**/*.{js,jsx}"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
