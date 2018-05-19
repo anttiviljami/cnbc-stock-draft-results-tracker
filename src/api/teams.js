@@ -4,15 +4,15 @@ export const teams = [
     picks: [
       {
         company: 'Facebook',
-        ticker: 'FB',
+        symbol: 'FB',
       },
       {
         company: 'Disney',
-        ticker: 'DIS',
+        symbol: 'DIS',
       },
       {
         company: 'SAGE Therapeutics',
-        ticker: 'SAGE',
+        symbol: 'SAGE',
       },
     ],
   },
@@ -21,15 +21,15 @@ export const teams = [
     picks: [
       {
         company: 'Bitcoin',
-        ticker: 'BTX',
+        symbol: 'BTX',
       },
       {
         company: 'Nvidia',
-        ticker: 'NVDA',
+        symbol: 'NVDA',
       },
       {
         company: 'Netflix',
-        ticker: 'NFLX',
+        symbol: 'NFLX',
       },
     ],
   },
@@ -38,15 +38,15 @@ export const teams = [
     picks: [
       {
         company: 'Chevron',
-        ticker: 'CVX',
+        symbol: 'CVX',
       },
       {
         company: 'Blue Apron',
-        ticker: 'APRN',
+        symbol: 'APRN',
       },
       {
         company: 'Boeing',
-        ticker: 'BA',
+        symbol: 'BA',
       },
     ],
   },
@@ -55,15 +55,15 @@ export const teams = [
     picks: [
       {
         company: 'Celgene',
-        ticker: 'CELG',
+        symbol: 'CELG',
       },
       {
         company: 'Apple',
-        ticker: 'AAPL',
+        symbol: 'AAPL',
       },
       {
         company: 'Visa',
-        ticker: 'V',
+        symbol: 'V',
       },
     ],
   },
@@ -72,15 +72,15 @@ export const teams = [
     picks: [
       {
         company: 'Exxon Mobil',
-        ticker: 'XOM',
+        symbol: 'XOM',
       },
       {
         company: 'Anadarko Petroleum',
-        ticker: 'APC',
+        symbol: 'APC',
       },
       {
-        company: 'Oil',
-        ticker: '@LCO.1',
+        company: 'Crude Oil',
+        symbol: 'BNO',
       },
     ],
   },
@@ -89,15 +89,15 @@ export const teams = [
     picks: [
       {
         company: 'Amgen',
-        ticker: 'AMGN',
+        symbol: 'AMGN',
       },
       {
         company: 'Dropbox',
-        ticker: 'DBX',
+        symbol: 'DBX',
       },
       {
         company: 'Chesapeake Energy',
-        ticker:  'CHK',
+        symbol:  'CHK',
       },
     ],
   },
@@ -106,15 +106,15 @@ export const teams = [
     picks: [
       {
         company: 'Amazon',
-        ticker: 'AMZN',
+        symbol: 'AMZN',
       },
       {
         company: 'Goldman Sachs',
-        ticker: 'GS',
+        symbol: 'GS',
       },
       {
         company: 'AMD',
-        ticker: 'AMD',
+        symbol: 'AMD',
       },
     ],
   },
@@ -123,15 +123,15 @@ export const teams = [
     picks: [
       {
         company: 'General Electric',
-        ticker: 'GE',
+        symbol: 'GE',
       },
       {
         company: 'Spotify',
-        ticker: 'SPOT',
+        symbol: 'SPOT',
       },
       {
         company: 'Alphabet',
-        ticker: 'GOOGL',
+        symbol: 'GOOGL',
       },
     ],
   },

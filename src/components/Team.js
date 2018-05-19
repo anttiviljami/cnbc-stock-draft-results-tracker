@@ -7,7 +7,7 @@ export default class Team extends Component {
       <div className="team">
         <h2>{ team.name }</h2>
         { team.picks.map(pick => 
-          (<pre key={pick.ticker}>
+          (<pre key={pick.symbol}>
             { JSON.stringify(pick, null, 2) }
           </pre>)
         )}
