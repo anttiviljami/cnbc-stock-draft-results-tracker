@@ -11,5 +11,5 @@ Uses [create-react-app](https://github.com/facebook/create-react-app)
 
 ```
 npm install
-npm run start
+npm run dev
 ```
