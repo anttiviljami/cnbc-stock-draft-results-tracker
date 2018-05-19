@@ -7,7 +7,7 @@ More info about the Stock Draft: https://www.cnbc.com/2018/04/26/heres-a-live-lo
 
 ## Development
 
-Uses create-react-app
+Uses [create-react-app](https://github.com/facebook/create-react-app)
 
 ```
 npm install
