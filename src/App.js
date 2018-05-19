@@ -14,9 +14,13 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const { data } = await axios.get('/api');
-    const { stocks, teams } = data;
-    this.setState({ stocks, teams });
+    try {
+      const { data } = await axios.get('/api');
+      const { stocks, teams } = data;
+      this.setState({ stocks, teams });
+    } catch (err) {
+      console.warn('Unable to fetch data', err);
+    }
   }
 
   render() {
