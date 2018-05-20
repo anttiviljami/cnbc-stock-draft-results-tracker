@@ -32,6 +32,7 @@ export async function apiHandler(req, res) {
 async function getCurrentBitcoinPrice() {
   const cached = await cache.getAsync('btc');
   if (cached) {
+    logger.info('BTC CACHE HIT');
     return Number(cached);
   }
   try {
@@ -42,6 +43,7 @@ async function getCurrentBitcoinPrice() {
     cache.setAsync('btc-stale', btcPrice);
     return Number(btcPrice);
   } catch (err) {
+    logger.warn('Unable to fetch bitcoin price, using stale cache instead...');
     const stale = await cache.getAsync('btc-stale');
     return Number(stale);
   }
@@ -50,6 +52,7 @@ async function getCurrentBitcoinPrice() {
 async function getStockQuotes() {
   const cached = await cache.getAsync('quotes');
   if (cached) {
+    logger.info('Quotes CACHE HIT');
     return JSON.parse(cached);
   }
   const stocks = _.flatMap(teams, 'picks');
@@ -64,6 +67,7 @@ async function getStockQuotes() {
     cache.setAsync('quotes-stale', JSON.stringify(quotes))
     return quotes;
   } catch (err) {
+    logger.warn('Unable to fetch stock quotes, using stale cache instead...');
     const stale = await cache.getAsync('quotes-stale');
     return JSON.parse(stale);
   }

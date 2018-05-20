@@ -1,13 +1,4 @@
-body {
-  background: #fff;
-}
-
-.App {
-  text-align: center;
-}
-
 .number {
-  padding-left: .25em;
   &.positive {
     color: green;
   }
@@ -16,9 +7,9 @@ body {
   }
 }
 
-ul {
-  padding: 0;
-  li {
-    list-style: none;
+article {
+  margin-bottom: 2em;
+  h2:first-child {
+    margin-top: 0;
   }
 }

@@ -1,17 +1,10 @@
-body {
-  background: #fff; }
+.number.positive {
+  color: green; }
 
-.App {
-  text-align: center; }
+.number.negative {
+  color: darkred; }
 
-.number {
-  padding-left: .25em; }
-  .number.positive {
-    color: green; }
-  .number.negative {
-    color: darkred; }
-
-ul {
-  padding: 0; }
-  ul li {
-    list-style: none; }
+article {
+  margin-bottom: 2em; }
+  article h2:first-child {
+    margin-top: 0; }

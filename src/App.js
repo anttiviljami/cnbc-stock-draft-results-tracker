@@ -26,21 +26,21 @@ class App extends Component {
   render() {
     const { teams } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-titlePerformance">2018 CNBC Stock Draft Standings</h1>
-          <p>Standings are based on companies performance, not including dividends, from the stock's closing price on Apr. 26, 2018</p>
+      <section>
+        <header>
+          <figure>
+            <h1>2018 CNBC Stock Draft Standings</h1>
+          </figure>
+          <blockquote>Standings are based on companies performance, not including dividends, from the stock's closing price on Apr. 26, 2018</blockquote>
         </header>
-        { teams.length > 0 ? (
-          <div className="teams">
-            { 
-              teams.map(team => <Team key={team.name} team={team} />)
-            }
-          </div>
-        ) : (
-          <pre>Loading...</pre>
-        )}
-      </div>
+        { teams.length > 0 ? 
+          ( teams.map((team, index) => <Team key={team.name} team={team} standing={index + 1} />) ) : 
+          (
+          <article>
+            <pre>Loading...</pre>
+          </article>
+          )}
+      </section>
     );
   }
 }

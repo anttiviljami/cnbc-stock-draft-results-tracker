@@ -1,34 +1,44 @@
 import React, { Component } from 'react';
 
-export default class Team extends Component {
-  renderPercentage(percentage) {
-    const performancePercent = Math.abs((percentage * 100).toFixed(2));
-    const sign = percentage > 0 ? '+' : '-';
-    return `${sign}${performancePercent}%`;
-  }
+import PercentNumber from './PercentNumber'
 
+export default class Team extends Component {
   render() {
-    const { team } = this.props;
-    const renderPercentage = this.renderPercentage;
+    const { team, standing } = this.props;
     return (
-      <div className="team">
-        <h2>{ team.name }</h2>
-        <p className="performance">
-          <span className={`number ${team.performance > 0 ? 'positive' : 'negative'}`}>
-            { renderPercentage(team.performance) }
-          </span>
-        </p>
-        <ul>
-        { team.picks.map(pick => 
-          (<li key={pick.symbol}>
-            <span>{`${ pick.company } (${ pick.symbol })`}</span>
-            <span className={`number ${pick.performance > 0 ? 'positive' : 'negative'}`}>
-              { renderPercentage(pick.performance) }
-            </span>
-          </li>)
-        )}
-        </ul>
-      </div>
+      <article>
+        <h2>#{standing} { team.name }</h2>
+        <header>
+          <h3>
+            <span>Total performance: </span>
+            <PercentNumber value={team.performance} />
+          </h3>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Pick</th>
+              <th>Company</th>
+              <th>Symbol</th>
+              <th>Start</th>
+              <th>Current</th>
+              <th>Performance</th>
+            </tr>
+          </thead>
+          <tbody>
+          { team.picks.map((pick, index) => 
+            (<tr key={pick.symbol}>
+              <td>#{ index + 1 }</td>
+              <td>{ pick.company }</td>
+              <td>{ pick.symbol }</td>
+              <td>{ pick.start.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }</td>
+              <td>{ pick.current.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }</td>
+              <td><PercentNumber value={pick.performance} /></td>
+            </tr>)
+          )}
+          </tbody>
+        </table>
+      </article>
     );
   }
 }
