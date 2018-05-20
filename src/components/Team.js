@@ -30,7 +30,7 @@ export default class Team extends Component {
             (<tr key={pick.symbol}>
               <td>#{ index + 1 }</td>
               <td>{ pick.company }</td>
-              <td>{ pick.symbol }</td>
+              <td><a href={pick.link} target="_blank" rel="noopener noreferrer">{ pick.symbol }</a></td>
               <td>{ pick.start.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }</td>
               <td>{ pick.current.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }</td>
               <td><PercentNumber value={pick.performance} /></td>

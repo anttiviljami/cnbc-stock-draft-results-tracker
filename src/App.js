@@ -49,7 +49,9 @@ class App extends Component {
         <footer>
           <blockquote>Standings are based on companies performance, not including dividends, from the stock's closing price on Apr. 26, 2018</blockquote>
           <p>
-            <span>Stock data from <a href="https://www.alphavantage.co" target="_blank">Alpha Vantage API</a></span>
+            <span>Stock data from <a href="https://www.alphavantage.co"
+              target="_blank"
+              rel="noopener noreferrer">Alpha Vantage API</a></span>
             <span style={{ float: 'right' }}>
               <a href="https://github.com/anttiviljami/cnbc-stock-draft-results-tracker"
                 target="_blank"

@@ -19,9 +19,11 @@ export async function apiHandler(req, res) {
       const { symbol, start } = stock;
       const quote = _.find(quotes, { symbol });
       const stockPrice = _.get(quote, 'price', 0);
-      const current = symbol === 'BTX' ? Number(btcPrice) : Number(stockPrice);
+      const isBitcoin = symbol === 'BTX';
+      const current = isBitcoin ? Number(btcPrice) : Number(stockPrice);
+      const link = isBitcoin ? 'https://www.cnbc.com/cryptocurrency/' : `https://www.cnbc.com/quotes/?symbol=${symbol}`;
       const performance = current / start - 1;
-      return { ...stock, current, performance };
+      return { ...stock, current, performance, link };
     })
     const performance = _.mean(_.map(picksWithPrices, 'performance'));
     return { ...team, picks: picksWithPrices, performance };
