@@ -7,11 +7,11 @@ export default class Team extends Component {
     const { team, standing } = this.props;
     return (
       <article>
-        <h2>#{standing} { team.name }</h2>
+        <h2>#{standing}: { team.name }</h2>
         <header>
           <h3>
-            <span>Total performance: </span>
-            <PercentNumber value={team.performance} />
+            <span>Total performance: </span><PercentNumber value={team.performance} /><br/>
+            <span>Draft order: #{ team.order }</span>
           </h3>
         </header>
         <table>

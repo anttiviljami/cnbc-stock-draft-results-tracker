@@ -13,7 +13,7 @@ export async function apiHandler(req, res) {
     getStockQuotes(),
     getCurrentBitcoinPrice(),
   ]);
-  const teamsWithPrices = teams.map((team) => {
+  const teamsWithPrices = teams.map((team, index) => {
     const { picks } = team;
     const picksWithPrices = picks.map((stock) => {
       const { symbol, start } = stock;
@@ -26,7 +26,7 @@ export async function apiHandler(req, res) {
       return { ...stock, current, performance, link };
     })
     const performance = _.mean(_.map(picksWithPrices, 'performance'));
-    return { ...team, picks: picksWithPrices, performance };
+    return { ...team, order: (index + 1), picks: picksWithPrices, performance };
   });
   res.send({ teams: _.orderBy(teamsWithPrices, 'performance', 'desc') });
 }
