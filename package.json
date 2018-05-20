@@ -1,5 +1,6 @@
 {
   "name": "cnbc-stock-draft-results-tracker",
+  "homepage": "https://cnbc-stock-draft-results.herokuapp.com",
   "version": "0.1.0",
   "license": "MIT",
   "proxy": {
