@@ -33,7 +33,7 @@ class App extends Component {
             <blockquote>
               <strong>What is this?</strong> &mdash; This is a fan-made, non-official live tracker website for the CNBC 2018 Stock Draft.
               More info about the Stock Draft and participating teams available on the
-              <a href="https://www.cnbc.com/2018/04/26/heres-a-live-look-at-power-lunchs-2018-cnbc-stock-draft-results.html"
+              <a href="https://www.cnbc.com/video/2018/04/26/how-the-cnbc-stock-draft-works.html"
                 target="_blank"
                 rel="noopener noreferrer"> CNBC website</a>.
             </blockquote>
