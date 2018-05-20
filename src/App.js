@@ -29,7 +29,7 @@ class App extends Component {
       <section>
         <header>
           <figure>
-            <h1><span role="img" aria-label="stock">📈</span> 2018 CNBC Stock Draft Live Standings</h1>
+            <h1><span role="img" aria-label="stock">📈</span> 2018 CNBC Stock Draft Live Results</h1>
             <blockquote>
               <strong>What is this?</strong> &mdash; This is a fan-made, non-official live tracker website for the CNBC 2018 Stock Draft.
               More info about the Stock Draft and participating teams available on the
