@@ -1,2 +1,17 @@
 body {
   background: #fff; }
+
+.App {
+  text-align: center; }
+
+.number {
+  padding-left: .25em; }
+  .number.positive {
+    color: green; }
+  .number.negative {
+    color: darkred; }
+
+ul {
+  padding: 0; }
+  ul li {
+    list-style: none; }

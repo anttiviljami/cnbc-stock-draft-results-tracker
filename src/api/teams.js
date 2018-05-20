@@ -5,17 +5,17 @@ export const teams = [
       {
         company: 'Facebook',
         symbol: 'FB',
-        close: 174.16,
+        start: 174.16,
       },
       {
         company: 'Disney',
         symbol: 'DIS',
-        close: 99.84,
+        start: 99.84,
       },
       {
         company: 'SAGE Therapeutics',
         symbol: 'SAGE',
-        close: 143.66,
+        start: 143.66,
       },
     ],
   },
@@ -25,17 +25,17 @@ export const teams = [
       {
         company: 'Bitcoin',
         symbol: 'BTX',
-        close: 8846.42,
+        start: 8846.42,
       },
       {
         company: 'Nvidia',
         symbol: 'NVDA',
-        close: 225.22
+        start: 225.22
       },
       {
         company: 'Netflix',
         symbol: 'NFLX',
-        close: 313.98,
+        start: 313.98,
       },
     ],
   },
@@ -45,17 +45,17 @@ export const teams = [
       {
         company: 'Chevron',
         symbol: 'CVX',
-        close: 124.22,
+        start: 124.22,
       },
       {
         company: 'Blue Apron',
         symbol: 'APRN',
-        close: 2.26,
+        start: 2.26,
       },
       {
         company: 'Boeing',
         symbol: 'BA',
-        close: 342.79,
+        start: 342.79,
       },
     ],
   },
@@ -65,17 +65,17 @@ export const teams = [
       {
         company: 'Celgene',
         symbol: 'CELG',
-        close: 92.08,
+        start: 92.08,
       },
       {
         company: 'Apple',
         symbol: 'AAPL',
-        close: 164.22,
+        start: 164.22,
       },
       {
         company: 'Visa',
         symbol: 'V',
-        close: 127.08,
+        start: 127.08,
       },
     ],
   },
@@ -85,17 +85,17 @@ export const teams = [
       {
         company: 'Exxon Mobil',
         symbol: 'XOM',
-        close: 80.86,
+        start: 80.86,
       },
       {
         company: 'Anadarko Petroleum',
         symbol: 'APC',
-        close: 67.5,
+        start: 67.5,
       },
       {
         company: 'Crude Oil',
         symbol: 'BNO',
-        close:  20.59,
+        start:  20.59,
       },
     ],
   },
@@ -105,17 +105,17 @@ export const teams = [
       {
         company: 'Amgen',
         symbol: 'AMGN',
-        close: 175.37,
+        start: 175.37,
       },
       {
         company: 'Dropbox',
         symbol: 'DBX',
-        close: 29.33,
+        start: 29.33,
       },
       {
         company: 'Chesapeake Energy',
         symbol:  'CHK',
-        close: 3.02,
+        start: 3.02,
       },
     ],
   },
@@ -125,17 +125,17 @@ export const teams = [
       {
         company: 'Amazon',
         symbol: 'AMZN',
-        close: 1517.96,
+        start: 1517.96,
       },
       {
         company: 'Goldman Sachs',
         symbol: 'GS',
-        close: 240.09,
+        start: 240.09,
       },
       {
         company: 'AMD',
         symbol: 'AMD',
-        close: 11.04,
+        start: 11.04,
       },
     ],
   },
@@ -145,17 +145,17 @@ export const teams = [
       {
         company: 'General Electric',
         symbol: 'GE',
-        close: 14.38,
+        start: 14.38,
       },
       {
         company: 'Spotify',
         symbol: 'SPOT',
-        close: 156.6,
+        start: 156.6,
       },
       {
         company: 'Alphabet',
         symbol: 'GOOGL',
-        close: 1043.31,
+        start: 1043.31,
       },
     ],
   },

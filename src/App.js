@@ -28,13 +28,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">2018 Stock Draft Standings</h1>
+          <h1 className="App-titlePerformance">2018 CNBC Stock Draft Standings</h1>
+          <p>Standings are based on companies performance, not including dividends, from the stock's closing price on Apr. 26, 2018</p>
         </header>
-        <div className="teams">
-          { 
-            teams.map(team => <Team key={team.name} team={team} />)
-          }
-        </div>
+        { teams.length > 0 ? (
+          <div className="teams">
+            { 
+              teams.map(team => <Team key={team.name} team={team} />)
+            }
+          </div>
+        ) : (
+          <pre>Loading...</pre>
+        )}
       </div>
     );
   }
