@@ -25,7 +25,7 @@ export const teams = [
       {
         company: 'Bitcoin',
         symbol: 'BTX',
-        close: 0,
+        close: 1,
       },
       {
         company: 'Nvidia',
@@ -75,7 +75,7 @@ export const teams = [
       {
         company: 'Visa',
         symbol: 'V',
-        oclose: 127.08,
+        close: 127.08,
       },
     ],
   },

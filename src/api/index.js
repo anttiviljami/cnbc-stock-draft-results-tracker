@@ -16,12 +16,14 @@ export async function apiHandler(req, res) {
   const teamsWithPrices = teams.map((team) => {
     const { picks } = team;
     const picksWithPrices = picks.map((stock) => {
-      const { symbol } = stock;
+      const { symbol, close } = stock;
       const quote = _.find(quotes, { '1. symbol': stock.symbol });
       const stockPrice = _.get(quote, '2. price', 0);
       const price = symbol === 'BTX' ? Number(btcPrice) : Number(stockPrice);
-      return { ...stock, price };
+      const performance = price / close - 1;
+      return { ...stock, price, performance };
     })
+    // @TODO: average performance
     return { ...team, picks: picksWithPrices };
   });
   res.send({ teams: teamsWithPrices });
