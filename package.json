@@ -1,7 +1,7 @@
 {
   "name": "cnbc-stock-draft-results-tracker",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "proxy": {
     "/api": {
       "target": "http://localhost:8000/"
