@@ -9,9 +9,11 @@ const cache = redis.create();
 const alpha = alphaVantage({ key: process.env.ALPHA_VANTAGE_API_KEY });
 
 export async function apiHandler(req, res) {
+  const { path } = req;
+  const useStale = Boolean(path.match(/stale/));
   const [quotes, btcPrice] = await Promise.all([
-    getStockQuotes(),
-    getCurrentBitcoinPrice(),
+    getStockQuotes(useStale),
+    getCurrentBitcoinPrice(useStale),
   ]);
   const teamsWithPrices = teams.map((team, index) => {
     const { picks } = team;
@@ -31,7 +33,15 @@ export async function apiHandler(req, res) {
   res.send({ teams: _.orderBy(teamsWithPrices, 'performance', 'desc') });
 }
 
-async function getCurrentBitcoinPrice() {
+async function getStaleBitcoinPrice() {
+  const stale = await cache.getAsync('btc-stale');
+  return Number(stale);
+}
+
+async function getCurrentBitcoinPrice(stale = false) {
+  if (stale) {
+    return getStaleBitcoinPrice();
+  }
   const cached = await cache.getAsync('btc');
   if (cached) {
     logger.info('BTC CACHE HIT');
@@ -46,12 +56,19 @@ async function getCurrentBitcoinPrice() {
     return Number(btcPrice);
   } catch (err) {
     logger.warn('Unable to fetch bitcoin price, using stale cache instead...');
-    const stale = await cache.getAsync('btc-stale');
-    return Number(stale);
+    return getStaleBitcoinPrice();
   }
 }
 
-async function getStockQuotes() {
+async function getStaleStockQuotes() {
+    const stale = await cache.getAsync('quotes-stale');
+    return JSON.parse(stale);
+}
+
+async function getStockQuotes(stale = false) {
+  if (stale) {
+    return getStaleStockQuotes();
+  }
   const cached = await cache.getAsync('quotes');
   if (cached) {
     logger.info('Quotes CACHE HIT');
@@ -70,8 +87,7 @@ async function getStockQuotes() {
     return quotes;
   } catch (err) {
     logger.warn('Unable to fetch stock quotes, using stale cache instead...');
-    const stale = await cache.getAsync('quotes-stale');
-    return JSON.parse(stale);
+    return getStaleStockQuotes();
   }
 }
 

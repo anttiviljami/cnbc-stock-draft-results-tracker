@@ -14,13 +14,15 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    try {
-      const { data } = await axios.get('/api');
-      const { stocks, teams } = data;
-      this.setState({ stocks, teams });
-    } catch (err) {
-      console.warn('Unable to fetch data', err);
+    const updateStocksAndTeams = (res) => {
+      const { stocks, teams } = res.data;
+      return this.setState({ stocks, teams });
     }
+    const unableToFetchData = (err) => {
+      console.error('Unable to fetch data', err);
+    }
+    await axios.get('/api/stale').then(updateStocksAndTeams).catch(unableToFetchData);
+    await axios.get('/api').then(updateStocksAndTeams).catch(unableToFetchData);
   }
 
   render() {
