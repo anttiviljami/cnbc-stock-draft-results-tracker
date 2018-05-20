@@ -51,7 +51,7 @@ async function getCurrentBitcoinPrice(stale = false) {
     const btc = await alpha.crypto.intraday('btc', 'usd');
     const btcPrice = _.get(_.find(btc['Time Series (Digital Currency Intraday)']), '1a. price (USD)', 0);
     logger.info('Current bitcoin price is:', btcPrice);
-    cache.setAsync('btc', btcPrice, 'EX', 500);
+    cache.setAsync('btc', btcPrice, 'EX', 30);
     cache.setAsync('btc-stale', btcPrice);
     return Number(btcPrice);
   } catch (err) {
@@ -82,7 +82,7 @@ async function getStockQuotes(stale = false) {
       price: _.get(quote, '2. price'),
     }))
     logger.info('Fetched', quotes.length, 'quotes');
-    cache.setAsync('quotes', JSON.stringify(quotes), 'EX', 500);
+    cache.setAsync('quotes', JSON.stringify(quotes), 'EX', 30);
     cache.setAsync('quotes-stale', JSON.stringify(quotes))
     return quotes;
   } catch (err) {
