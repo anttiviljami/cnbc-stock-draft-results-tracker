@@ -40,6 +40,16 @@ class App extends Component {
             <pre>Loading...</pre>
           </article>
           )}
+        <footer>
+          <p>
+            <span>Stock data from <a href="https://www.alphavantage.co" target="_blank">Alpha Vantage API</a></span>
+            <span style={{ float: 'right' }}>
+              <a href="https://github.com/anttiviljami/cnbc-stock-draft-results-tracker" target="_blank" rel="noopener noreferrer">Project GitHub page</a>,
+              Created by&nbsp;
+              <a href="https://twitter.com/anttiviljami" target="_blank" rel="noopener noreferrer">@anttiviljami</a>
+            </span>
+          </p>
+        </footer>
       </section>
     );
   }
