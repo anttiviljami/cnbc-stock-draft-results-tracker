@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import Team from './components/Team';
 
+import ReactGA from 'react-ga';
+
 class App extends Component {
   constructor() {
     super();
@@ -69,5 +71,8 @@ class App extends Component {
     );
   }
 }
+
+ReactGA.initialize('UA-119562917-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 export default App;
