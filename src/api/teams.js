@@ -25,7 +25,7 @@ export const teams = [
       {
         company: 'Bitcoin',
         symbol: 'BTX',
-        close: 1,
+        close: 8846.42,
       },
       {
         company: 'Nvidia',

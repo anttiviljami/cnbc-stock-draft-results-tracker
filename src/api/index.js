@@ -23,10 +23,10 @@ export async function apiHandler(req, res) {
       const performance = price / close - 1;
       return { ...stock, price, performance };
     })
-    // @TODO: average performance
-    return { ...team, picks: picksWithPrices };
+    const performance = _.mean(_.map(picksWithPrices, 'performance'));
+    return { ...team, picks: picksWithPrices, performance };
   });
-  res.send({ teams: teamsWithPrices });
+  res.send({ teams: _.orderBy(teamsWithPrices, 'performance', 'desc') });
 }
 
 export async function getStartingPrices() {
