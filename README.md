@@ -14,6 +14,7 @@ More info about the Stock Draft: https://www.cnbc.com/video/2018/04/26/how-the-c
 Uses [create-react-app](https://github.com/facebook/create-react-app)
 
 ```
+cp .env.sample .env # Get your free alpha vantage api key from https://alphavantage.co/
 npm install
 npm run dev
 ```
